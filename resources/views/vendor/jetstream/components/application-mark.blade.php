@@ -1,0 +1,1 @@
+<img src="{{ asset('images/siaindex.jpg')}}" alt="" style="width:64px;">

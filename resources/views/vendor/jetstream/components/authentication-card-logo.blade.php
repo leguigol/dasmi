@@ -1,0 +1,1 @@
+<img src="{{ asset('images/dasmi_index2.jpg')}}" alt="" style="width:256px;">
