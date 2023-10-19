@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ConvenioSeeder::class);
         $this->call(MedicoSeeder::class);
         $this->call(PlanSeeder::class);
+        $this->call(VacunaSeeder::class);
 
 
     }

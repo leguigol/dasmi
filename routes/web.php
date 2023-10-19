@@ -23,6 +23,8 @@ use App\Http\Controllers\TabaquismoController;
 use App\Http\Controllers\TurnosController;
 use App\Http\Controllers\VademecumController;
 use App\Http\Controllers\Admin\MedicosController;
+use App\Http\Controllers\VacunaController;
+use App\Models\vacuna;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -174,3 +176,7 @@ Route::get('coseguros/create',[Coseguros::class,'create'])->name('admin.coseguro
 Route::post('coseguros/store',[Coseguros::class,'store'])->name('admin.coseguros.store');
 Route::get('coseguros/index',[Coseguros::class,'index'])->name('admin.coseguros.index');
 Route::post('/traerCoseguro', [Coseguros::class, 'traerCoseguro'])->name('traerCoseguro');
+
+Route::get('vacunas/create',[VacunaController::class,'create'])->name('vacunas.create');
+Route::get('vacunas/index',[VacunaController::class,'index'])->name('vacunas.index');
+

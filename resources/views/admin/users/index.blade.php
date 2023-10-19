@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'SIA LALUSIDAL')
+@section('title', 'DASMI')
 
 @section('content_header')
     <h1>LISTA DE USUARIOS</h1>

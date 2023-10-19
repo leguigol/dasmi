@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'SIA LALUSIDAL')
+@section('title', 'DASMI')
 
 @section('content_header')
 <div class="row">
@@ -228,6 +228,23 @@
             </div>        
         </div>    
     </div>    
+    <div class="row">
+        <div class="col-md-12">                
+            <div class="card">
+                <h5 class="card-title bg-blue text-white p-2">ESQUEMA DE VACUNACION
+                    <a href="{{route('vacunas.create', $padron->id)}}" class="btn btn-sm btn-danger float-right">ANOTAR</a>
+                </h5>
+                <div class="card-body">
+                    @foreach ($pendiente as $pen)
+                        @if (isset($pen->pendiente))
+                            <a href="{{route('hc.show',$evo->id)}}">{{$pen->pendiente}} <br></a>    
+                        @endif
+                    @endforeach
+                </div>
+            </div>        
+        </div>    
+    </div>    
+
     @stop
 
 @section('css')

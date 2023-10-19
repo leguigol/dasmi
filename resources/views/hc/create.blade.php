@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'SIA LALUSIDAL')
+@section('title', 'DASMI')
 
 @section('content_header')
 
@@ -36,20 +36,17 @@
                   </div>              
                 </div>  
                 <div class="row mt-2">
-                  <div class="input-group mb-2">
-                      <div class="col-md-2">    
+                        <div class="col-md-2">    
                           <label class="input-group-text" for="inputGroupSelect01">Subjetivo</label>
-                      </div>              
+                        </div>              
                         <div class="col-md-10">                  
                             <textarea class="form-control" id="exampleFormControlTextarea1" name="subjetivo" rows="3">{{old('subjetivo')}}</textarea>
                             @error('subjetivo')
                               <strong style="color:red">*{{$message}}</strong>
                             @enderror   
                         </div>    
-                  </div>  
                 </div>
                 <div class="row mt-2">
-                  <div class="input-group mb-2">
                       <div class="col-md-2">    
                           <label class="input-group-text" for="inputGroupSelect01">Objetivo</label>
                       </div>              
@@ -57,9 +54,8 @@
                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="objetivo">{{old('objetivo')}}</textarea>
                           @error('objetivo')
                             <strong style="color:red">*{{$message}}</strong>
-                        @enderror   
-                  </div>    
-                  </div>  
+                          @enderror   
+                      </div>  
                 </div>
             </div>    
           </div>    
@@ -108,14 +104,12 @@
               <div class="card-header">PLAN</div>
               <div class="card-body">
                   <div class="row mt-2">
-                    <div class="input-group mb-2">
                         <div class="col-md-2">    
                             <label class="input-group-text" for="inputGroupSelect01">Detalle del Plan</label>
                         </div>              
-                        <div class="col-md-8">                  
+                        <div class="col-md-10">                  
                             <textarea class="form-control" id="exampleFormControlTextarea1" name="detalle" rows="3"></textarea>
                         </div>    
-                    </div>  
                   </div>  
                   <div class="row mt-1">
                     <div class="col-md-2">    
