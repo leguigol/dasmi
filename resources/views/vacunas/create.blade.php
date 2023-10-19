@@ -3,11 +3,16 @@
 @section('title', 'DASMI')
 
 @section('content_header')
+{!! Form::open(['route' => 'vacunas.store']) !!}
+
+<input type="text hidden" class="form-control invisible" name="id" value="{{$padron->id}}"> 
+
 <div class="row">
     <div class="col-md-12">                
         <div class="card">
 
-            <h5 class="card-title bg-blue text-white p-2">ESQUEMA DE VACUNACION
+            <h5 class="card-title bg-blue text-white p-2">ESQUEMA DE VACUNACION 
+                <span class="badge badge-success float-right">{{$padron->apellido . " ". $padron->nombres}}</span>
             </h5>
             <div class="card-body">
                 <div class="card">
@@ -43,10 +48,10 @@
                                 
                                 <a href="{{route('vacunas.index')}}">{{$vacu->vacuna}} <br></a>   
                                 <label class="radio-inline">
-                                    <input type="radio" name="opcion_{{ $vacu->id }}" value="si"> Sí
+                                    <input type="radio" name="opcion_{{ $vacu->id }}" {{ ($vacu->nombreVacuna()->id==$vacu->id) ? 'checked' : ''}}> Sí
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="opcion_{{ $vacu->id }}" value="no"> No
+                                    <input type="radio" name="opcion_{{ $vacu->id }}" value="N"> No
                                 </label>
 
 
@@ -56,11 +61,22 @@
                     </div>    
                 </div>    
             </div>
+            <div class="row">
+                <div class="col-md-2 mx-4 mb-3">
+                    <button class="btn btn-primary" type="submit">GRABAR DATOS</button>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <button class="btn btn-secondary" type="reset">RESTABLECER</button>
+                </div>
+            </div>
+
         </div>    
+
     </div>        
-
-
 </div>
+
+{!! form::close() !!}
+
 @stop
 
 @section('content')

@@ -5,7 +5,7 @@
 @section('content_header')
 <div class="row">
     <div class="col-md-2">                
-        <h1>HISTORIA CLINICA</h1>
+        <h1>HISTORIA CLINICA</h1><span class="badge badge-success">Dr.{{ Auth::user()->name }}</span>
     </div>
 </div>
 @stop
@@ -193,8 +193,8 @@
             <div class="card">
                 <h5 class="card-title bg-red text-white p-2">PENDIENTE</h5>
                 <div class="card-body">
-                    @foreach ($pendiente as $pen)
-                        @if (isset($pen->pendiente))
+                    @foreach ($vacunas as $vacu)
+                        @if (isset($vacu->pendiente))
                             <a href="{{route('hc.show',$evo->id)}}">{{$pen->pendiente}} <br></a>    
                         @endif
                     @endforeach
@@ -235,9 +235,9 @@
                     <a href="{{route('vacunas.create', $padron->id)}}" class="btn btn-sm btn-danger float-right">ANOTAR</a>
                 </h5>
                 <div class="card-body">
-                    @foreach ($pendiente as $pen)
-                        @if (isset($pen->pendiente))
-                            <a href="{{route('hc.show',$evo->id)}}">{{$pen->pendiente}} <br></a>    
+                    @foreach ($vacunas as $vacu)
+                        @if ($vacu->vacuna_value=='S')
+                            <span class="badge badge-success">{{$vacu->nombreVacuna->edad}} {{$vacu->nombreVacuna->vacuna}}</span>
                         @endif
                     @endforeach
                 </div>

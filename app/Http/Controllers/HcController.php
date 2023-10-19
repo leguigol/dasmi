@@ -19,6 +19,7 @@ use App\Models\pendiente;
 use App\Models\practica;
 use App\Models\proceso;
 use App\Models\tabaquismo;
+use App\Models\VacunasPaciente;
 use App\Models\vademecum;
 use Illuminate\Http\Request;
 
@@ -51,8 +52,9 @@ class HcController extends Controller
         $drogashc=medicamento::where('padron_id','=',$id)->get();
         $practicashc=estudio::where('padron_id','=',$id)->get();
         $procesoshc=hcplane::where('padron_id','=',$id)->get();
+        $vacunas=VacunasPaciente::where('padron_id','=',$id)->get();
 
-        return view('hc.principal',compact('padron','tabaco','alcohol','droga','personal','familiares','gineco','factores','evoluciones','hcproblema','pendiente','drogashc','practicashc','procesoshc'));
+        return view('hc.principal',compact('padron','tabaco','alcohol','droga','personal','familiares','gineco','factores','evoluciones','hcproblema','pendiente','drogashc','practicashc','procesoshc','vacunas'));
     }
 
     public function create($id)

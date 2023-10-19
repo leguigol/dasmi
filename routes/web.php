@@ -177,6 +177,7 @@ Route::post('coseguros/store',[Coseguros::class,'store'])->name('admin.coseguros
 Route::get('coseguros/index',[Coseguros::class,'index'])->name('admin.coseguros.index');
 Route::post('/traerCoseguro', [Coseguros::class, 'traerCoseguro'])->name('traerCoseguro');
 
-Route::get('vacunas/create',[VacunaController::class,'create'])->name('vacunas.create');
+Route::get('vacunas/create/{id}',[VacunaController::class,'create'])->name('vacunas.create');
 Route::get('vacunas/index',[VacunaController::class,'index'])->name('vacunas.index');
+Route::post('vacunas/store',[VacunaController::class,'store'])->name('vacunas.store');
 
