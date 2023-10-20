@@ -10,7 +10,11 @@
 <div class="row">
     <div class="col-md-12">                
         <div class="card">
-
+            <div class="row">
+                <div class="col-md-2">                
+                    <h1>HISTORIA CLINICA</h1><span class="badge badge-success">Dr.{{ Auth::user()->name }}</span>
+                </div>
+            </div>            
             <h5 class="card-title bg-blue text-white p-2">ESQUEMA DE VACUNACION 
                 <span class="badge badge-success float-right">{{$padron->apellido . " ". $padron->nombres}}</span>
             </h5>
@@ -48,10 +52,10 @@
                                 
                                 <a href="{{route('vacunas.index')}}">{{$vacu->vacuna}} <br></a>   
                                 <label class="radio-inline">
-                                    <input type="radio" name="opcion_{{ $vacu->id }}" {{ ($vacu->nombreVacuna()->id==$vacu->id) ? 'checked' : ''}}> Sí
+                                    <input type="radio" name="opcion_{{ $vacu->id }}" value="S" {{ ($vacu->estaSeleccionada('S',$vacu->id,$padron->id)) ? 'checked' : '' }}> Sí
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="opcion_{{ $vacu->id }}" value="N"> No
+                                    <input type="radio" name="opcion_{{ $vacu->id }}" value="N" {{ ($vacu->estaSeleccionada('N',$vacu->id,$padron->id)) ? 'checked' : '' }}> No
                                 </label>
 
 

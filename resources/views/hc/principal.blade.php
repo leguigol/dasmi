@@ -233,11 +233,12 @@
             <div class="card">
                 <h5 class="card-title bg-blue text-white p-2">ESQUEMA DE VACUNACION
                     <a href="{{route('vacunas.create', $padron->id)}}" class="btn btn-sm btn-danger float-right">ANOTAR</a>
+                    <a href="{{ asset('images/calendario.pdf') }}" class="badge badge-success" target="_blank">Abrir Esquema</a>
                 </h5>
                 <div class="card-body">
                     @foreach ($vacunas as $vacu)
                         @if ($vacu->vacuna_value=='S')
-                            <span class="badge badge-success">{{$vacu->nombreVacuna->edad}} {{$vacu->nombreVacuna->vacuna}}</span>
+                            <span class="badge badge-success">Edad:{{$vacu->nombreVacuna->edad}}-{{$vacu->nombreVacuna->vacuna}}</span>
                         @endif
                     @endforeach
                 </div>

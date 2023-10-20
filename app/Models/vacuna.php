@@ -13,4 +13,14 @@ class vacuna extends Model
         'edad',
         'vacuna',
     ];    
+    public function estaSeleccionada($valor, $valor2, $padronId)
+    {
+        return $this->vacunasPaciente()->where('vacuna_value', $valor)->where('vacuna_id',$valor2)->where('padron_id', $padronId)->exists();
+    }
+
+    public function vacunasPaciente()
+    {
+        return $this->hasMany(VacunasPaciente::class);
+    }
+
 }

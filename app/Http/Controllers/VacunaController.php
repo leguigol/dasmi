@@ -30,7 +30,10 @@ class VacunaController extends Controller
         foreach ($request->all() as $key => $value) {
             if (strpos($key, 'opcion_') === 0 && $value) {
                 $id_vacuna = substr($key, 7); 
-                
+                if ($value==null){
+                    $value='N';
+                }
+                echo $value;
                 $vacuna=new VacunasPaciente();
                 $vacuna->vacuna_id=$id_vacuna;
                 $vacuna->vacuna_value=$value;
