@@ -21,4 +21,5 @@ class VacunasPaciente extends Model
         return $this->belongsTo(vacuna::class, 'vacuna_id');
     }
 
+
 }
