@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\vacuna;
-use App\Models\padrone;
+use App\Models\Padrone;
 use App\Models\VacunasPaciente;
 use Illuminate\Support\Facades\Auth;
 

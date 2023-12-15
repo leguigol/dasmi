@@ -52,11 +52,7 @@
                                 
                                 <a href="{{route('vacunas.index')}}">{{$vacu->vacuna}} <br></a>   
                                 <label class="radio-inline">
-<<<<<<< HEAD
                                     <input type="radio" name="opcion_{{ $vacu->id }}" value="S" {{ ($vacu->estaSeleccionada('S',$vacu->id,$padron->id)) ? 'checked' : '' }}> Sí
-=======
-                                    <input type="radio" name="opcion_{{ $vacu->id }}" {{ ($vacu->vacuna_value=='S') ? 'checked' : ''}}> Sí
->>>>>>> e7e78e6667078f8e3ee33ad189a290d9818818b9
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="opcion_{{ $vacu->id }}" value="N" {{ ($vacu->estaSeleccionada('N',$vacu->id,$padron->id)) ? 'checked' : '' }}> No
@@ -72,6 +68,9 @@
             <div class="row">
                 <div class="col-md-2 mx-4 mb-3">
                     <button class="btn btn-primary" type="submit">GRABAR DATOS</button>
+                </div>
+                <div class="col-md-2 mx-4 mb-3">
+                    <a href={{ route('hc.principal',$padron->id) }} class="btn btn-success" type="submit">VOLVER</a>
                 </div>
                 <div class="col-md-2 mb-3">
                     <button class="btn btn-secondary" type="reset">RESTABLECER</button>

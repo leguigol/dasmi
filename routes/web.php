@@ -23,6 +23,7 @@ use App\Http\Controllers\TabaquismoController;
 use App\Http\Controllers\TurnosController;
 use App\Http\Controllers\VademecumController;
 use App\Http\Controllers\Admin\MedicosController;
+use App\Http\Controllers\CrecimientoController;
 use App\Http\Controllers\VacunaController;
 use App\Models\vacuna;
 use Illuminate\Support\Facades\Route;
@@ -181,3 +182,4 @@ Route::get('vacunas/create/{id}',[VacunaController::class,'create'])->name('vacu
 Route::get('vacunas/index',[VacunaController::class,'index'])->name('vacunas.index');
 Route::post('vacunas/store',[VacunaController::class,'store'])->name('vacunas.store');
 
+Route::get('crecimiento/index/{id}',[CrecimientoController::class,'index'])->name('crecimiento.index');

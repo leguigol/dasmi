@@ -35,4 +35,7 @@ class Padrone extends Model
     public function convenio(){
         return $this->belongsTo(Convenio::class, 'convenio_id');
     }
+    public function vacunas(){
+        return $this->belongsTo(Vacuna::class, 'id');
+    }
 }
