@@ -490,9 +490,12 @@
         <div class="col-md-6">                
             <div class="card">
                 <h5 class="card-title bg-blue text-white p-2">CRECIMIENTO
-                    <a href="{{route('crecimiento.index',$padron->id)}}" class="btn btn-sm btn-danger float-right">CALCULAR</a>
+                    <a href="{{route('crecimiento.index',$padron->id)}}" class="btn btn-sm btn-danger float-right">VER/CALCULAR</a>
                 </h5>
                 <div class="card-body">
+                    @foreach ($crecimientos as $creci)
+                        <span class="badge badge-success">{{ \Carbon\Carbon::parse($creci->fecha_consulta)->format('d/m/Y') }}</span>
+                    @endforeach
                 </div>
             </div>        
         </div>    

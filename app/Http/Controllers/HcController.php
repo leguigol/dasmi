@@ -7,6 +7,7 @@ use App\Models\Antecedente;
 use App\Models\Antefamiliare;
 use App\Models\Anteginecologico;
 use App\Models\ciap2;
+use App\Models\Crecimiento;
 use App\Models\droga;
 use App\Models\estudio;
 use App\Models\Evolucione;
@@ -53,8 +54,8 @@ class HcController extends Controller
         $practicashc=estudio::where('padron_id','=',$id)->get();
         $procesoshc=hcplane::where('padron_id','=',$id)->get();
         $vacunas=VacunasPaciente::where('padron_id','=',$id)->get();
-
-        return view('hc.principal',compact('padron','tabaco','alcohol','droga','personal','familiares','gineco','factores','evoluciones','hcproblema','pendiente','drogashc','practicashc','procesoshc','vacunas'));
+        $crecimientos=Crecimiento::where('padron_id','=',$id)->get();
+        return view('hc.principal',compact('padron','tabaco','alcohol','droga','personal','familiares','gineco','factores','evoluciones','hcproblema','pendiente','drogashc','practicashc','procesoshc','vacunas','crecimientos'));
     }
 
     public function create($id)

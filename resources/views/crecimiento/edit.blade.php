@@ -13,84 +13,103 @@
 @stop
 
 @section('content')
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{!! Form::model($crecimiento, ['route' => ['crecimiento.update', $crecimiento], 'method' => 'patch']) !!}
 
-@if (session('borrar')=='S')  
-    <script>
-        Swal.fire(
-            'BORRADO!',
-            'El registro de crecimiento ha sido borrado',
-            'OK'
-        )
-    </script>
-@endif
-@if (session('modificar')=='S')  
-    <script>
-        Swal.fire(
-            'ACTUALIZADO!',
-            'El registro de crecimiento ha sido actualizado',
-            'OK'
-        )
-    </script>
-@endif
-
-@if($crecimiento->count())
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>FECHA CONSULTA</th>
-            <th>FECHA NACIMIENTO</th>
-            <th>SEXO</th>
-            <th>ESTATURA</th>
-            <th>Z ESTATURA</th>
-            <th>PESO</th>
-            <th>Z PESO</th>
-            <th>IMC</th>
-            <th>ACCION</th>
-        </tr>    
-    </thead>
-    <tbody>
-
-        @foreach ($crecimiento as $creci)
-            <tr>
-                <td>{{$creci->id}}</td>
-                <td>{{ \Carbon\Carbon::parse($creci->fecha_consulta)->format('d/m/Y') }}</td>
-                <td>{{ \Carbon\Carbon::parse($creci->fecha_nacimiento)->format('d/m/Y') }}</td>
-                <td>{{$creci->sexo}}</td>
-                <td>{{$creci->estatura}}</td>
-                <td>{{$creci->z_estatura}}</td>
-                <td>{{$creci->peso}}</td>
-                <td>{{$creci->z_peso}}</td>
-                <td>{{$creci->imc}}</td>
-                <td>
-                    <a class="btn btn-primary" href="{{route('crecimiento.edit',$creci->id)}}">Editar</a>
-                    <form action="{{route('crecimiento.destroy',$creci->id)}}" method="POST">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                    </form>    
-                </td>
-            </tr>    
-        @endforeach
-    </tbody>
-</table>                
-
-@else
-    <div class="row">
-        <h2>No hay aun registros de crecimiento</h2>
-    </div>    
-@endif    
 <div class="row">
-    <div class="col-md-2">
-        <a href="{{route('crecimiento.create',$padron->id)}}" class="btn btn-primary">NUEVO REGISTRO</a>
-    </div>    
-    <div class="col-md-2">
-       <a href="{{route('hc.principal',$padron->id)}}" class="form-control btn btn-secondary" type="submit">PRINCIPAL</a>
-    </div>
+    <input type="text hidden" class="form-control invisible" name="id" value="{{$padron->id}}"> 
 
-</div>
+    <div class="col-md-3">
+    
+        <div class="mb-2">
+            <label for="exampleFormControlInput1" class="form-label">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="fechanac" name="fechanac" placeholder="Fecha de nacimiento" required value="{{$crecimiento->fecha_nacimiento}}">
+            <span class="badge text-bg-danger" id="aviso"><p style="color: red"></p></span>
+            @error('fechanac')
+                <strong style="color:red">*{{$message}}</strong>
+            @enderror  
+        </div>
+
+        <div class="mb-2">
+            <label for="exampleFormControlInput1" class="form-label">Fecha de consulta</label>
+            <input type="date" class="form-control" id="fechacon" name="fechacon" placeholder="Fecha de consulta" value="{{$crecimiento->fecha_consulta}}">
+            @error('fechacon')
+                <strong style="color:red">*{{$message}}</strong>
+            @enderror  
+        </div>
+        
+        <div class="mb-2">
+            <select class="form-control" id="sexo" name="sexo" aria-label="Default select example">
+                <option selected>Sexo</option>
+                <option value="M" {{$crecimiento->sexo=='M' ? 'selected' : ''}}>Mujer</option>
+                <option value="V" {{$crecimiento->sexo=='V' ? 'selected' : ''}}>Varon</option>
+            </select>       
+            @error('sexo')
+                <strong style="color:red">*{{$message}}</strong>
+            @enderror  
+        
+        </div>
+
+        <div class="mb-2">
+            <label for="exampleFormControlInput1" class="form-label">Edad</label>
+            <input type="text" class="form-control" id="decimal" readonly>
+            <span class="badge text-bg-danger" id="aviso2"><p style="color: red"></p></span>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="estatura" class="form-label" id="lblEstatura">Estatura</label>
+            </div>
+            <div class="col-md-6">
+                <label for="valorestatura" class="form-label" id="lblvale">Z</label>
+            </div>
+        </div>    
+        <div class="mb-1 d-flex" id="estaturaDiv">
+            <input type="text" class="form-control" name="estatura" id="estatura" placeholder="Estatura" onblur="calcularZestatura()" value="{{$crecimiento->estatura}}">
+            @error('estatura')
+                <strong style="color:red">*{{$message}}</strong>
+            @enderror  
+            <input type="text" class="form-control mx-2" name="valorestatura" id="valorestatura" value="{{$crecimiento->z_estatura}}">
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="peso" class="form-label" id="lblPeso">Peso</label>
+            </div>
+            <div class="col-md-6">
+                <label for="valorpeso" class="form-label" id="lblvalp">Z</label>
+            </div>
+        </div>    
+
+        <div class="mb-1 d-flex" id="pesoDiv">
+            <input type="text" class="form-control" name="peso" id="peso" placeholder="Peso" onchange="calcularZpeso()" value="{{$crecimiento->peso}}">
+            @error('peso')
+                <strong style="color:red">*{{$message}}</strong>
+            @enderror  
+            <input type="text" class="form-control mx-2" name="valorpeso" id="valorpeso" value="{{$crecimiento->z_peso}}">
+        </div>
+        <label for="imc" class="form-label" id="lblImc">IMC</label>
+        <div class="mb-2" id="imcDiv"">
+            <input type="text" class="form-control" name="imc" id="imc" placeholder="IMC" value="{{$crecimiento->imc}}">
+            @error('imc')
+                <strong style="color:red">*{{$message}}</strong>
+            @enderror  
+        </div>
+
+        <div class="row">                            
+            <div class="col-md-12 mb-2">
+              <button class="form-control btn btn-primary" type="submit">ACTUALIZAR CRECIMIENTO</button>
+            </div>
+        </div>
+        <div class="row">                            
+            <div class="col-md-6 mb-2">
+              <a href="{{route('hc.principal',$padron->id)}}" class="form-control btn btn-secondary" type="submit">PRINCIPAL</a>
+            </div>
+        </div>    
+
+    </div>    
+
+</div>  
+{!! form::close() !!}
+
 @stop
 
 @section('css')
@@ -101,6 +120,9 @@
 
 @section('js')
 <script>
+
+    mostrarFecha()
+
     const percentil50M =[
     { mes: 0, p50: 50,de: 1.8 },
     { mes: 1, p50: 53,de: 1.86 },
@@ -1030,6 +1052,12 @@
             }
         }
     });
+    function mostrarFecha(){
+        var fechaNac = new Date(document.getElementById('fechanac').value);
+        var fechaCon = new Date(document.getElementById('fechacon').value);
+        var decimal = (fechaCon - fechaNac) / (1000 * 60 * 60 * 24 * 365); // Calcular la edad en decimal
+        document.getElementById('decimal').value = decimal.toFixed(2);
+    }
     function calcularZpeso(){
         var peso=document.getElementById('peso').value;
         var fechaNac = new Date(document.getElementById('fechanac').value);

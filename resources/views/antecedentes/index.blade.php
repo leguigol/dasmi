@@ -281,7 +281,7 @@
                   <div class="card-body">
 
                     <div class="row">
-                      <div class="col-md-6">                  
+                      <div class="col-md-8">                  
                         <div class="input-group mb-2">
                           <label class="input-group-text" for="inputGroupSelect01">Bebe ?</label>
                             <div class="form-control">  
@@ -302,7 +302,7 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-md-6">                  
+                      <div class="col-md-8">                  
                         <div class="input-group mb-2">
                           <label class="input-group-text" for="inputGroupSelect01">¿Lo criticó alguien porque tomaba mucho?</label>
                             <div class="form-control">  
@@ -323,7 +323,7 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-md-6">                  
+                      <div class="col-md-8">                  
                         <div class="input-group mb-2">
                           <label class="input-group-text" for="inputGroupSelect01">¿tomaba mucho?</label>
                             <div class="form-control">  
@@ -344,7 +344,7 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-md-6">                  
+                      <div class="col-md-8">                  
                         <div class="input-group mb-2">
                           <label class="input-group-text" for="inputGroupSelect01">¿Sintió alguna vez ganas de disminuir la bebida?</label>
                             <div class="form-control">  
@@ -365,7 +365,7 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-md-6">                  
+                      <div class="col-md-8">                  
                         <div class="input-group mb-2">
                           <label class="input-group-text" for="inputGroupSelect01">¿Se sintió alguna vez culpable por tomar mucho?</label>
                             <div class="form-control">  
@@ -386,7 +386,7 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-md-6">                  
+                      <div class="col-md-8">                  
                         <div class="input-group mb-2">
                           <label class="input-group-text" for="inputGroupSelect01">¿Toma algo a la mañana para sentirse mejor?</label>
                             <div class="form-control">  
@@ -1118,7 +1118,7 @@
               <div class="row">
                 <div class="col-md-3">                  
                   <div class="input-group mb-2">
-                    <label class="input-group-text" for="inputGroupSelect01">ENFERMEDAD REUMATICA</label>
+                    <label class="input-group-text" for="inputGroupSelect01">ENF.REUMATICA</label>
                       <div class="form-control">  
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="reuma">
@@ -1560,7 +1560,7 @@
             <div class="card-body">
 
               <div class="row">
-                <div class="col-md-3">                  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">HTA</label>
                       <div class="form-control">  
@@ -1580,7 +1580,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-3">                  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">CARDIOPATIAS</label>
                       <div class="form-control">  
@@ -1600,7 +1600,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-3">                  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">DBT</label>
                       <div class="form-control">  
@@ -1620,7 +1620,10 @@
                   </div>
                 </div>
 
-                <div class="col-md-3">                  
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">ACV/AIT</label>
                       <div class="form-control">  
@@ -1640,10 +1643,7 @@
                   </div>
                 </div>
 
-              </div>
-
-              <div class="row">
-                <div class="col-md-3">                  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">CA DE COLON</label>
                       <div class="form-control">  
@@ -1663,7 +1663,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-3">                  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">CA DE RECTO</label>
                       <div class="form-control">  
@@ -1683,7 +1683,10 @@
                   </div>
                 </div>
 
-                <div class="col-md-3">                  
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">CA DE MAMA</label>
                       <div class="form-control">  
@@ -1703,7 +1706,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-3">                  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">OTROS CA</label>
                       <div class="form-control">  
@@ -1723,12 +1726,9 @@
                   </div>
                 </div>
 
-              </div>
-
-              <div class="row">
-                <div class="col-md-3">                  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
-                    <label class="input-group-text" for="inputGroupSelect01">ABUSO DE DROGAS</label>
+                    <label class="input-group-text" for="inputGroupSelect01">AB. DE DROGAS</label>
                       <div class="form-control">  
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="abudm">
@@ -1745,10 +1745,11 @@
                     </div>   
                   </div>
                 </div>
-
-                <div class="col-md-3">                  
+              </div>
+              <div class="row">  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
-                    <label class="input-group-text" for="inputGroupSelect01">ABUSO DE ALCOHOL</label>
+                    <label class="input-group-text" for="inputGroupSelect01">AB/DE ALCOHOL</label>
                       <div class="form-control">  
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="abuhm">
@@ -1766,7 +1767,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-3">                  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">DEPRESION</label>
                       <div class="form-control">  
@@ -1786,7 +1787,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-3">                  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">DISCAPACIDAD</label>
                       <div class="form-control">  
@@ -1805,8 +1806,10 @@
                     </div>   
                   </div>
                 </div>
+              </div>
 
-                <div class="col-md-3">                  
+              <div class="row">  
+                <div class="col-md-4">                  
                   <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">MUERTE SUBITA</label>
                       <div class="form-control">  
