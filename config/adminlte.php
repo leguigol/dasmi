@@ -366,6 +366,17 @@ return [
                 ],    
             ],    
         ],
+        [
+            'text'    => 'Internaciones',
+            'can'     => 'internaciones.ver',  
+            'icon' => 'fas fa-fw fa-user-md',
+            'submenu' => [
+                [
+                    'text' => 'ABM Internacion',
+                    'route' => 'internaciones.index',
+                ],
+            ]
+        ],
     ],
 
     /*

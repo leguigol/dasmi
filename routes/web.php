@@ -24,6 +24,7 @@ use App\Http\Controllers\TurnosController;
 use App\Http\Controllers\VademecumController;
 use App\Http\Controllers\Admin\MedicosController;
 use App\Http\Controllers\CrecimientoController;
+use App\Http\Controllers\InternacioneController;
 use App\Http\Controllers\VacunaController;
 use App\Models\Crecimiento;
 use App\Models\vacuna;
@@ -189,3 +190,5 @@ Route::post('crecimiento/store',[CrecimientoController::class,'store'])->name('c
 Route::delete('crecimiento/destroy/{id}',[CrecimientoController::class,'destroy'])->name('crecimiento.destroy');
 Route::Patch('crecimiento/update/{id}',[CrecimientoController::class,'update'])->name('crecimiento.update');
 Route::get('crecimiento/edit/{id}',[CrecimientoController::class,'edit'])->name('crecimiento.edit');
+
+Route::get('internaciones/index',[InternacioneController::class,'index'])->name('internaciones.index');
