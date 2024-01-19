@@ -13,6 +13,7 @@
                                 <th>ID</th>
                                 <th>NOMBRE</th>
                                 <th>EMAIL</th>
+                                <th>ROL</th>
                                 <th>CENTRO</th>
                                 <th>ACCION</th>
                         </thead>
@@ -22,10 +23,15 @@
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
+                                    @if(isset($user->roles()->first()->name))
+                                        <td>{{$user->roles()->first()->name}}</td>
+                                    @else
+                                        <td></td>
+                                    @endif    
                                     @if(isset($user->centro->centro_nombre))
                                        <td>{{$user->centro->centro_nombre}}</td>                                    
     
-                                       @else
+                                    @else
                                        <td></td>                                    
                                                                       
                                     @endif

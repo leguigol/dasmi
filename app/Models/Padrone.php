@@ -38,4 +38,7 @@ class Padrone extends Model
     public function vacunas(){
         return $this->belongsTo(Vacuna::class, 'id');
     }
+    public function internaciones(){
+        return $this->hasMany(Internacione::class, 'padron_id');
+    }
 }

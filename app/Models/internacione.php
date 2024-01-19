@@ -11,10 +11,13 @@ class internacione extends Model
 
     protected $fillable=[
         'user_id',
+        'prestador_id',
         'centro_id',
         'padron_id',
         'fechahora',
-        'fechahora_ingreso',
+        'fecha_ingreso',
+        'hora_ingreso',
+        'medico',
         'tipo_internacion',
         'servicio',
         'diagnostico',
@@ -24,5 +27,8 @@ class internacione extends Model
     public function padron(){
         return $this->belongsTo(Padrone::class,'padron_id');
     }
-
+    public function prestador()
+    {
+        return $this->belongsTo(Prestadore::class,'prestador_id');
+    }
 }

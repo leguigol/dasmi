@@ -18,10 +18,13 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('centro_id');
             $table->unsignedBigInteger('padron_id');
+            $table->unsignedBigInteger('prestador_id');
             $table->datetime('fechahora');
-            $table->datetime('fechahora_ingreso');
-            $table->unsignedBigInteger('tipo_internacion');
-            $table->unsignedBigInteger('servicio');
+            $table->date('fecha_ingreso');
+            $table->string('hora_ingreso',5);
+            $table->string('medico');
+            $table->string('tipo_internacion',2);
+            $table->string('servicio',2);
             $table->string('diagnostico');
             $table->text('observaciones');
             $table->timestamps();

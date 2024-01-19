@@ -33,7 +33,15 @@
                     </div>    
                 @endforeach
 
-                {!! Form::submit('Asignar Rol', ['class' => 'btn btn-primary mt-2']) !!}
+                <div class="row">
+
+                    <div class="col-md-2">
+                        {!! Form::submit('Asignar Rol', ['class' => 'btn btn-primary mt-2']) !!}
+                    </div>    
+                    <div class="col-md-2 mt-2">
+                        <a href="{{route('admin.users.index')}}" class="form-control btn btn-primary" type="submit">VOLVER</a>
+                    </div>          
+                </div>    
             {!! Form::close() !!}    
         </div>
     </div>

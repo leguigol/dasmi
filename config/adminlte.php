@@ -313,19 +313,24 @@ return [
                     'route'  => 'admin.medicos.index',
                     'icon'    => 'fas fa-fw fa-stethoscope',
                 ],
-                [
-                    'text' => 'Nomenclador',
-                    'route'  => 'admin.nomenclador.index',
-                    'icon'    => 'fa fa-book',
-                ],
-                [
-                    'text' => 'Vademecum',
-                    'route'  => 'admin.vademecum.index',
-                    'icon'    => 'fa fa-book',
-                ],
+                // [
+                //     'text' => 'Nomenclador',
+                //     'route'  => 'admin.nomenclador.index',
+                //     'icon'    => 'fa fa-book',
+                // ],
+                // [
+                //     'text' => 'Vademecum',
+                //     'route'  => 'admin.vademecum.index',
+                //     'icon'    => 'fa fa-book',
+                // ],
                 [
                     'text' => 'Especialidades',
                     'route'  => 'admin.especialidades.index',
+                    'icon'    => 'fa fa-book',
+                ],
+                [
+                    'text' => 'Prestadores',
+                    'route'  => 'admin.prestadores.index',
                     'icon'    => 'fa fa-book',
                 ],
             ],
@@ -374,6 +379,17 @@ return [
                 [
                     'text' => 'ABM Internacion',
                     'route' => 'internaciones.index',
+                ],
+            ]
+        ],
+        [
+            'text'    => 'Internaciones',
+            'can'     => 'internaciones.admin',  
+            'icon' => 'fas fa-fw fa-user-md',
+            'submenu' => [
+                [
+                    'text' => 'ABM Internacion',
+                    'route' => 'internaciones.admin',
                 ],
             ]
         ],

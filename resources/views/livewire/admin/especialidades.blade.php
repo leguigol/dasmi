@@ -2,11 +2,11 @@
     <div class="card">
 
         <div class="card-header">
+        <a class="btn btn-primary mb-2" href="{{route('admin.especialidades.create')}}">NUEVA ESPECIALIDAD</a>           
              <input wire:model="search" type="text" class="form-control" placeholder="Ingrese el nombre de la especialidad">
         </div>
         @if ($especia->count())            
             <div class="card-body">
-                <a class="btn btn-primary" href="{{route('admin.especialidades.create')}}">NUEVA ESPECIALIDAD</a>           
                     <table class="table table-striped">
                         <thead>
                             <tr>

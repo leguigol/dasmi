@@ -8,8 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
+use Laravel\Jetstream\Rules\Role;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+
 
 class User extends Authenticatable
 {
@@ -65,5 +67,4 @@ class User extends Authenticatable
     public function centro(){
         return $this->belongsTo(Centro::class);
     }
-
 }

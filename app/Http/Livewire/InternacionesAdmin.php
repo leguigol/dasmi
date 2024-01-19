@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User; 
 
 
-class Internaciones extends Component
+class InternacionesAdmin extends Component
 {
     use WithPagination;
     
@@ -25,12 +25,11 @@ class Internaciones extends Component
     {
 
             $internaciones=Internacione::Where('centro_id', Auth::user()->centro_id)
-            ->Where('user_id',Auth::user()->id)
             ->whereHas('padron',function($query){
             $query->where('apellido', 'like', '%'.$this->search.'%');
             })->paginate(10);                        
 
-        return view('livewire.internaciones-index',compact('internaciones'));
+        return view('livewire.internaciones-admin',compact('internaciones'));
 
     }
     public function formatearFecha($fecha)

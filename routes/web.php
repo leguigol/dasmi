@@ -94,6 +94,7 @@ Route::get('/admin/prestadores/index',[PrestadoreController::class,'index'])->na
 Route::get('/admin/prestadores/create',[PrestadoreController::class,'create'])->name('admin.prestadores.create');
 Route::get('/admin/prestadores/show/{id}',[PrestadoreController::class,'show'])->name('admin.prestadores.show');
 Route::patch('/admin/prestadores/update/{id}',[PrestadoreController::class,'update'])->name('admin.prestadores.update');
+Route::post('/admin/prestadores/store',[PrestadoreController::class,'store'])->name('admin.prestadores.store');
 
 Route::get('/admin/especialidades/index',[EspecialidadeController::class,'index'])->name('admin.especialidades.index');
 Route::get('/admin/especialidades/create',[EspecialidadeController::class,'create'])->name('admin.especialidades.create');
@@ -192,3 +193,12 @@ Route::Patch('crecimiento/update/{id}',[CrecimientoController::class,'update'])-
 Route::get('crecimiento/edit/{id}',[CrecimientoController::class,'edit'])->name('crecimiento.edit');
 
 Route::get('internaciones/index',[InternacioneController::class,'index'])->name('internaciones.index');
+Route::get('internaciones/indexAdmin',[InternacioneController::class,'indexAdmin'])->name('internaciones.admin');
+Route::get('internaciones/preview',[InternacioneController::class,'preview'])->name('internaciones.preview');
+Route::get('internaciones/create/{id}',[InternacioneController::class,'create'])->name('internaciones.create');
+Route::post('internaciones/store',[InternacioneController::class,'store'])->name('internaciones.store');
+Route::get('internaciones/show/{id}',[InternacioneController::class,'show'])->name('internaciones.show');
+Route::delete('internaciones/destroy/{id}',[InternacioneController::class,'destroy'])->name('internaciones.destroy');
+Route::get('internaciones/edit/{id}',[InternacioneController::class,'edit'])->name('internaciones.edit');
+Route::Patch('internaciones/update/{id}',[InternacioneController::class,'update'])->name('internaciones.update');
+
