@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\estadoInternacione;
 use Illuminate\Http\Request;
 use App\Models\Padrone;
 use App\Models\Prestadore;
@@ -42,7 +43,8 @@ class InternacioneController extends Controller
         $internacion=Internacione::find($id);
         $prestadores=Prestadore::all();
         $padron=Padrone::where('id',"=",$internacion->padron_id)->first();
-        return view('internaciones.show',compact('internacion','padron','prestadores'));
+        $estados=estadoInternacione::where('internacion_id',"=",$id)->get();
+        return view('internaciones.show',compact('internacion','padron','prestadores','estados'));
     }
     public function destroy($id)
     {
@@ -120,6 +122,16 @@ class InternacioneController extends Controller
         $internacion->observaciones = $request->input('observaciones');
     
         $internacion->save();        
+
+        $estado=new estadoInternacione();
+
+        $estado->internacion_id=$internacion->id;
+        $estado->tipo='I';
+        $estado->fecha_desde=$request->input('ingreso');
+        $estado->estado='P';
+        $estado->observaciones='';
+
+        $estado->save();
 
         return redirect()->route('internaciones.index');
 

@@ -17,7 +17,7 @@
                                 <th>NOMBRES</th>
                                 <th>FECHA INGRESO</th>
                                 <th>PRESTADOR</th>
-                                <th>DIAGNOSTICO</th>
+                                <th>ESTADO</th>
                                 <th>ACCION</th>
                         </thead>
                         <tbody>
@@ -29,7 +29,7 @@
                                     <td>{{$internacion->padron->nombres}}</td>
                                     <td>{{ date('d-m-Y', strtotime($internacion->fecha_ingreso))}}</td>
                                     <td>{{$internacion->prestador->prestador_nombre}}</td>
-                                    <td>{{$internacion->diagnostico}}</td>
+                                    <td>{{$internacion->estados->last()->estado}}</td>
                                     <td>
                                         <div class="d-inline-block">
                                             <a class="btn btn-primary" href="{{route('internaciones.show', $internacion->id)}}">Ver</a>

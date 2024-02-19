@@ -31,4 +31,7 @@ class internacione extends Model
     {
         return $this->belongsTo(Prestadore::class,'prestador_id');
     }
+    public function estados(){
+        return $this->hasMany(estadoInternacione::class,'internacion_id');
+    }
 }

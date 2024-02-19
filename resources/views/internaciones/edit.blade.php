@@ -113,7 +113,7 @@
         <div class="col-md-1 p-2 m-3">
              {!! Form::submit('ACTUALIZAR', ['class'=>'btn btn-primary']) !!}
         </div>          
-        <div class="col-md-1 p-2 m-3">
+        <div class="col-md-2 p-2 m-3">
             <a href="{{route('internaciones.index')}}" class="form-control btn btn-primary" type="submit">VOLVER</a>
         </div>          
 
