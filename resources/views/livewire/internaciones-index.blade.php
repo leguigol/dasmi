@@ -17,7 +17,7 @@
                                 <th>NOMBRES</th>
                                 <th>FECHA INGRESO</th>
                                 <th>PRESTADOR</th>
-                                <th>DIAGNOSTICO</th>
+                                <th>ESTADO</th>
                                 <th>ACCION</th>
                         </thead>
                         <tbody>
@@ -29,7 +29,22 @@
                                     <td>{{$internacion->padron->nombres}}</td>
                                     <td>{{ date('d-m-Y', strtotime($internacion->fecha_ingreso))}}</td>
                                     <td>{{$internacion->prestador->prestador_nombre}}</td>
-                                    <td>{{$internacion->diagnostico}}</td>
+                                    @if ($internacion->estados->last()->estado==='P')
+                                        <td>
+                                            <span class="badge bg-primary">Pendiente</span>                                        
+                                        </td>    
+                                    @endif
+                                    @if ($internacion->estados->last()->estado==='A')
+                                        <td>
+                                            <span class="badge bg-success">Autorizado</span>                                        
+                                        </td>    
+                                    @endif
+                                    @if ($internacion->estados->last()->estado==='R')
+                                        <td>
+                                            <span class="badge bg-danger">Rechazado</span>                                        
+                                        </td>    
+                                    @endif
+
                                     <td>
                                         <div class="d-inline-block">
                                             <a class="btn btn-primary" href="{{route('internaciones.show', $internacion->id)}}">Ver</a>
@@ -40,7 +55,7 @@
                                         <div class="d-inline-block">
                                             <div class="d-inline-block">
                                                 {!! Form::open(['route' => ['internaciones.destroy', $internacion->id], 'method'=> 'delete', 'class'=>'formu-eliminar']) !!}
-                                                {!! Form::submit('BORRAR', ['class'=>'btn btn-danger']) !!}     
+                                                {!! Form::submit('X', ['class'=>'btn btn-danger']) !!}     
                                                 {!! Form::close() !!}    
                                             </div>
                                         </div>

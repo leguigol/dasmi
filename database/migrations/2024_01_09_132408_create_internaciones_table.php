@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('tipo_internacion',2);
             $table->string('servicio',2);
             $table->string('diagnostico');
-            $table->text('observaciones');
+            $table->text('observaciones')->nullable();
             $table->timestamps();
         });
     }

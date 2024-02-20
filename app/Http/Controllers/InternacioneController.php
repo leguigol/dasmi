@@ -93,6 +93,14 @@ class InternacioneController extends Controller
 
         return view('internaciones.edit',compact('internacion','prestadores','padron'));
     }
+
+    public function edit_estado($id)
+    {
+        $estado=estadoInternacione::find($id);
+
+        return view('internaciones.edit_estado',compact('estado'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([

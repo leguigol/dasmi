@@ -201,4 +201,5 @@ Route::get('internaciones/show/{id}',[InternacioneController::class,'show'])->na
 Route::delete('internaciones/destroy/{id}',[InternacioneController::class,'destroy'])->name('internaciones.destroy');
 Route::get('internaciones/edit/{id}',[InternacioneController::class,'edit'])->name('internaciones.edit');
 Route::Patch('internaciones/update/{id}',[InternacioneController::class,'update'])->name('internaciones.update');
+Route::get('internaciones/edit_estado/{id}',[InternacioneController::class,'edit_estado'])->name('internaciones.edit_estado');
 

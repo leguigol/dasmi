@@ -121,9 +121,15 @@
                 <div class="col-md-2">
                     <label for="exampleFormControlInput1" class="form-label">AUDITOR</label>
                     <input type="text" class="form-control" id="auditor" name="auditor" value="{{ $estado->auditor_id }}">    
-                </div>                        
-            @endif
-    
+                </div>      
+            @endif                      
+            @if (Auth::user()->hasRole('Auditor')) 
+            <div class="col-md-2">
+                <label for="exampleFormControlInput1" class="form-label">EDITAR</label>
+                <a href="{{route('internaciones.edit_estado',$estado->id)}}" class="form-control btn btn-primary" type="submit">EDITAR ESTADO</a>
+            </div>      
+            @endif    
+
         </div>        
         
         @endforeach
