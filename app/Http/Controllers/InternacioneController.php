@@ -34,6 +34,14 @@ class InternacioneController extends Controller
 
         return view('internaciones.create',compact('padron','prestadores'));
     }
+
+    public function add_estado($id)
+    {
+
+        $internaciones=Internacione::find($id);
+        return view('internaciones.add_estado',compact('internaciones'));
+    }
+
     public function preview()
     {
         return view('internaciones.preview');
@@ -161,5 +169,24 @@ class InternacioneController extends Controller
         return redirect()->route('internaciones.index');
 
     }
+
+    public function store_estado(Request $request)
+    {
+
+        $estado=new estadoInternacione();
+
+        $estado->internacion_id=$request->id;
+        $estado->tipo=$request->tipoint;
+        $estado->fecha_desde=$request->input('desde');
+        $estado->fecha_hasta=$request->input('hasta');
+        $estado->estado=$request->input('estado');
+        $estado->observaciones=$request->input('observaciones');
+
+        $estado->save();
+
+        return redirect()->route('internaciones.admin');
+
+    }
+
 
 }

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\especialidade;
 use App\Models\prestadore;
+use Illuminate\Support\Facades\Auth;
+
 
 class PrestadoreController extends Controller
 {
@@ -33,7 +35,7 @@ class PrestadoreController extends Controller
         $presta->domicilio=$request->prestador_domicilio;
         $presta->localidad=$request->prestador_localidad;
         $presta->especialidad_id=$request->prestador_especialidad;
-
+        $presta->centro_id=Auth::user()->centro_id;
         $presta->save();
 
         return view('admin.prestadores.index');
@@ -56,6 +58,7 @@ class PrestadoreController extends Controller
         $presta->localidad=$request->prestador_localidad;
         $presta->especialidad_id=$request->prestador_especialidad;
         $presta->fecha_baja=$request->prestador_febaja;
+        $presta->centro_id=Auth::user()->centro_id;
 
         $presta->save();
 

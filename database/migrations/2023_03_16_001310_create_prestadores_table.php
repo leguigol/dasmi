@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('localidad');
             $table->unsignedBigInteger('especialidad_id');
             $table->date('fecha_baja')->nullable();
+            $table->unsignedBigInteger('centro_id');
             $table->timestamps();
         });
     }

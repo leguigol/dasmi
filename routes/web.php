@@ -203,4 +203,6 @@ Route::get('internaciones/edit/{id}',[InternacioneController::class,'edit'])->na
 Route::Patch('internaciones/update/{id}',[InternacioneController::class,'update'])->name('internaciones.update');
 Route::get('internaciones/edit_estado/{id}',[InternacioneController::class,'edit_estado'])->name('internaciones.edit_estado');
 Route::Patch('internaciones/update_estado/{id}',[InternacioneController::class,'update_estado'])->name('internaciones.update_estado');
+Route::get('internaciones/add_estado}',[InternacioneController::class,'add_estado'])->name('internaciones.add_estado');
+Route::post('internaciones/store_estado',[InternacioneController::class,'store_estado'])->name('internaciones.store_estado');
 

@@ -78,7 +78,6 @@
             </div>    
         </div>        
 
-        @foreach ($estados as $estado)
         <div class="row mt-2">
             <div class="col-12">
                 <div class="bg-dark text-white p-1">
@@ -86,6 +85,7 @@
                 </div>
             </div>
         </div>    
+        @foreach ($estados as $estado)
         <div class="row mt-2">
             <div class="col-md-1">
                 <label for="exampleFormControlInput1" class="form-label">ID</label>
@@ -108,13 +108,13 @@
                 <div class="col-md-2">
                 <label for="exampleFormControlInput1" class="form-label">ESTADO</label>
                 @if ($estado->estado==='A')
-                    <input type="text" class="form-control" id="tipo" name="estado" value="AUTORIZADO">            
+                    <input type="text" class="form-control" id="tipo" name="estado" value="AUTORIZADO"  style="background-color: green; color: white;">            
                 @endif
                 @if ($estado->estado==='P')
-                    <input type="text" class="form-control" id="tipo" name="estado" value="PENDIENTE">            
+                    <input type="text" class="form-control" id="tipo" name="estado" value="PENDIENTE" style="background-color: yellow; color: black;">            
                 @endif
                 @if ($estado->estado==='R')
-                    <input type="text" class="form-control" id="tipo" name="estado" value="RECHAZADO">            
+                    <input type="text" class="form-control" id="tipo" name="estado" value="RECHAZADO" style="background-color: red; color: white;">            
                 @endif
             </div>    
             @if ($estado->auditor_id)
@@ -131,12 +131,17 @@
             @endif    
 
         </div>        
-        
+        <div class="rot mt-1">
+            <input type="text" class="form-control" id="observa" name="observa" value="{{ $estado->observaciones }}">    
+        </div>        
         @endforeach
     
     </div>
 
     <div class="row">
+        <div class="col-md-2 p-2 m-3">
+            <a href="{{route('internaciones.add_estado',$internacion->id)}}" class="form-control btn btn-success" type="submit">AGREGAR ESTADO</a>
+        </div>
         <div class="col-md-2 p-2 m-3">
             <a href="{{route('internaciones.admin')}}" class="form-control btn btn-primary" type="submit">VOLVER</a>
         </div>          
