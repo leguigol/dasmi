@@ -85,6 +85,23 @@ class InternacioneController extends Controller
         return redirect()->route('internaciones.index');
 
     }
+
+    public function update_estado(Request $request,$id)
+    {
+        $estado=estadoInternacione::find($id);        
+        $estado->auditor_id=Auth::id();
+        $estado->tipo= $request->input('tipoint');
+        $estado->fecha_desde=$request->input('desde');
+        $estado->fecha_hasta = $request->input('hasta');
+        $estado->estado = $request->input('estado'); 
+        $estado->observaciones = $request->input('observaciones');
+    
+        $estado->save();        
+
+        return redirect()->route('internaciones.admin');
+
+    }
+
     public function edit($id)
     {
         $internacion=Internacione::find($id);

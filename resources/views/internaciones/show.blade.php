@@ -120,12 +120,12 @@
             @if ($estado->auditor_id)
                 <div class="col-md-2">
                     <label for="exampleFormControlInput1" class="form-label">AUDITOR</label>
-                    <input type="text" class="form-control" id="auditor" name="auditor" value="{{ $estado->auditor_id }}">    
+                    <input type="text" class="form-control" id="auditor" name="auditor" value="{{ $estado->getAuditorNameAttribute() }}">    
                 </div>      
             @endif                      
             @if (Auth::user()->hasRole('Auditor')) 
-            <div class="col-md-2">
-                <label for="exampleFormControlInput1" class="form-label">EDITAR</label>
+            <div class="col-md-1">
+                <label for="exampleFormControlInput1" class="form-label">ACCION</label>
                 <a href="{{route('internaciones.edit_estado',$estado->id)}}" class="form-control btn btn-primary" type="submit">EDITAR ESTADO</a>
             </div>      
             @endif    
@@ -138,7 +138,7 @@
 
     <div class="row">
         <div class="col-md-2 p-2 m-3">
-            <a href="{{route('internaciones.index')}}" class="form-control btn btn-primary" type="submit">VOLVER</a>
+            <a href="{{route('internaciones.admin')}}" class="form-control btn btn-primary" type="submit">VOLVER</a>
         </div>          
     </div>
 

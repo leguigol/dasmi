@@ -202,4 +202,5 @@ Route::delete('internaciones/destroy/{id}',[InternacioneController::class,'destr
 Route::get('internaciones/edit/{id}',[InternacioneController::class,'edit'])->name('internaciones.edit');
 Route::Patch('internaciones/update/{id}',[InternacioneController::class,'update'])->name('internaciones.update');
 Route::get('internaciones/edit_estado/{id}',[InternacioneController::class,'edit_estado'])->name('internaciones.edit_estado');
+Route::Patch('internaciones/update_estado/{id}',[InternacioneController::class,'update_estado'])->name('internaciones.update_estado');
 
